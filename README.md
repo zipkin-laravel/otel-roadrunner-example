@@ -1,8 +1,16 @@
 # Opentelemetry + roadrunner example
-Example of [roadrunner](roadrunner.dev)'s opentelemetry plugin integrating with [opentelemetry-php](https://github.com/open-telemetry/opentelemetry-php).
-
-RoadRunner's otel middleware emits some spans, and also injects distributed trace headers into the request.
-The PHP application then extracts those trace headers, so that its own traces can be correctly parented to the RR trace.
+1. build:
+   
+	docker compose build php
+3. update:
+   
+	docker compose run php composer update
+5. start:
+   
+	docker compose up -d
+7. stop:
+   
+	docker compose stop
 
 # usage
 
@@ -40,4 +48,4 @@ And then, request the serviceA:
 curl http://127.0.0.1:8002/api/getvalues
 ```
 
-Next, you can view traces that went through the backend via http://localhost:9411/?serviceName=frontend.
+Next, you can view traces that went through the backend via http://localhost:9411
